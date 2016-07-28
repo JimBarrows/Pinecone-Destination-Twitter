@@ -1,0 +1,16 @@
+image: docker:git
+
+stages:
+  - deploy
+
+deploy_ui_to_staging:
+  stage: deploy
+  environment: Development
+  services:
+       - docker:dind
+  script:
+    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN gitlab.com:5005
+    - docker build -t registry.gitlab.com/reallybigtree/pinecone-destination-twitter.
+    - docker push registry.gitlab.com/reallybigtree/pinecone-destination-twitter
+  only:
+    - develop
