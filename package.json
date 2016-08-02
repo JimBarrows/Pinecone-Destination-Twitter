@@ -4,50 +4,53 @@
   "description" : "RabbitMq twitter queue listener",
   "main" : "index.js",
   "bugs" : {
-	"url" : "https://gitlab.com/ReallyBigTree/Pinecone-Destination-Twitter/issues",
-	"email" : "jim@reallybigtree.com"
+    "url" : "https://gitlab.com/ReallyBigTree/Pinecone-Destination-Twitter/issues",
+    "email" : "jim@reallybigtree.com"
   },
   "scripts" : {
-	"pinecone:destinations:twitter:dev:start" : "nodemon index.js --exec babel-node --presets es2015,stage-2",
-	"pinecone:destinations:twitter:test:e2e" : "babel-node specs/run.js",
-	"pinecone:destinations:twitter:docker:dev:run" : "docker run --detach --name pinecone-destinations-twitter --link pinecone-mongo:mongo --link pinecone-rabbitmq:rabbitmq registry.gitlab.com/reallybigtree/pinecone-destination-twitter",
-	"pinecone:destinations:twitter:docker:build" : "docker build -t registry.gitlab.com/reallybigtree/pinecone-destination-twitter .",
-	"pinecone:destinations:twitter:docker:push" : "docker push registry.gitlab.com/reallybigtree/pinecone-destination-twitter"
+    "prepinecone:destinations:twitter:docker:build" : "npm install;npm prune",
+    "pinecone:destinations:twitter:docker:push" : "docker push registry.gitlab.com/reallybigtree/pinecone-destination-twitter",
+    "pinecone:destinations:twitter:docker:run" : "docker run --detach --name pinecone-destinations-twitter --link pinecone-mongo:mongo --link pinecone-rabbitmq:rabbitmq registry.gitlab.com/reallybigtree/pinecone-destination-twitter",
+    "pinecone:destinations:twitter:start" : "nodemon index.js --exec babel-node --presets es2015,stage-2",
+    "pinecone:destinations:twitter:test:e2e" : "babel-node specs/run.js",
+    "pinecone:destinations:twitter:docker:build" : "docker build -t registry.gitlab.com/reallybigtree/pinecone-destination-twitter .",
+    "start" : "npm run pinecone:destinations:twitter:start"
   },
   "author" : {
-	"name" : "Jim Barrows",
-	"email" : "jim@reallybigtree.com"
+    "name" : "Jim Barrows",
+    "email" : "jim@reallybigtree.com"
   },
   "contributors" : [
-	{
-	  "name" : "Noah Pinto",
-	  "email" : "noah@reallybigtree.com"
-	}
+    {
+      "name" : "Noah Pinto",
+      "email" : "noah@reallybigtree.com"
+    }
   ],
   "license" : "UNLICENSED",
   "private" : true,
   "repository" : {
-	"type" : "git",
-	"url" : "https://gitlab.com/ReallyBigTree/Pinecone-Destination-Twitter/tree/master"
+    "type" : "git",
+    "url" : "https://gitlab.com/ReallyBigTree/Pinecone-Destination-Twitter/tree/master"
   },
   "dependencies" : {
-	"amqplib" : "^0.4.2",
-	"axios" : "^0.13.1",
-	"babel-cli" : "^6.10.1",
-	"babel-core" : "^6.10.4",
-	"babel-preset-es2015" : "^6.9.0",
-	"babel-preset-stage-2" : "^6.11.0",
-	"bluebird" : "^3.4.1",
-	"moment" : "^2.14.1",
-	"mongoose" : "^4.5.3",
-	"nodemon" : "^1.9.2",
-	"pinecone-models" : "git+ssh://git@gitlab.com/ReallyBigTree/Pinecone-Models.git#develop",
-	"promise.prototype.finally" : "^1.0.1",
-	"querystring" : "^0.2.0"
+    "amqplib" : "^0.4.2",
+    "axios" : "^0.13.1",
+    "babel-cli" : "^6.10.1",
+    "babel-core" : "^6.10.4",
+    "babel-preset-es2015" : "^6.9.0",
+    "babel-preset-stage-2" : "^6.11.0",
+    "bluebird" : "^3.4.1",
+    "moment" : "^2.14.1",
+    "mongoose" : "^4.5.3",
+    "nodemon" : "^1.9.2",
+    "pinecone-models" : "git+ssh://git@gitlab.com/ReallyBigTree/Pinecone-Models.git#develop",
+    "promise.prototype.finally" : "^1.0.1",
+    "querystring" : "^0.2.0",
+    "twitter" : "^1.3.0"
   },
   "devDependencies" : {
-	"jasmine" : "^2.4.1",
-	"minimatch" : "^3.0.2",
-	"webdriverio" : "^4.2.3"
+    "jasmine" : "^2.4.1",
+    "minimatch" : "^3.0.2",
+    "webdriverio" : "^4.2.3"
   }
 }
