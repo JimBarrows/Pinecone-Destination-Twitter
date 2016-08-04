@@ -14,7 +14,8 @@
     "pinecone:destinations:twitter:start" : "nodemon index.js --exec babel-node --presets es2015,stage-2",
     "pinecone:destinations:twitter:test:e2e" : "babel-node specs/run.js",
     "pinecone:destinations:twitter:docker:build" : "docker build -t registry.gitlab.com/reallybigtree/pinecone-destination-twitter .",
-    "start" : "npm run pinecone:destinations:twitter:start"
+    "start" : "npm run pinecone:destinations:twitter:start",
+    "update:models" : "rm -rf node_modules/pinecone-models; npm install"
   },
   "author" : {
     "name" : "Jim Barrows",
