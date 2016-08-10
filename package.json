@@ -34,6 +34,7 @@
     "url" : "https://gitlab.com/ReallyBigTree/Pinecone-Destination-Twitter/tree/master"
   },
   "dependencies" : {
+    "@reallybigtree/pinecone-models" : "^1.0.0",
     "amqplib" : "^0.4.2",
     "axios" : "^0.13.1",
     "babel-cli" : "^6.10.1",
@@ -44,7 +45,6 @@
     "moment" : "^2.14.1",
     "mongoose" : "^4.5.3",
     "nodemon" : "^1.9.2",
-    "pinecone-models" : "git+ssh://git@gitlab.com/ReallyBigTree/Pinecone-Models.git#develop",
     "promise.prototype.finally" : "^1.0.1",
     "querystring" : "^0.2.0",
     "twitter" : "^1.3.0"
