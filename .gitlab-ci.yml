@@ -26,15 +26,10 @@ cache:
   paths:
     - node_modules/
 
-npm_install:
-  image: node:4.2.2
-  stage: install
-  script:
-    - npm install
-
-build_image:
+build_staging:
   image: docker:git
   stage: build
+  environment: staging
   services:
   - docker:dind
   script:
@@ -42,4 +37,17 @@ build_image:
     - docker build -t registry.gitlab.com/reallybigtree/pinecone-server .
     - docker push registry.gitlab.com/reallybigtree/pinecone-server
   only:
-    - Staging
+    - develop
+
+build_prod:
+  image: docker:git
+  stage: build
+  environment: production
+  services:
+  - docker:dind
+  script:
+    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.gitlab.com
+    - docker build -t registry.gitlab.com/reallybigtree/pinecone-server .
+    - docker push registry.gitlab.com/reallybigtree/pinecone-server
+  only:
+    - master
