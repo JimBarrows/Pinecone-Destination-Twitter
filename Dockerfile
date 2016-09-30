@@ -9,6 +9,7 @@ WORKDIR /usr/src/app
 COPY package.json .
 COPY index.js .
 COPY configurations.js .
+COPY .npmrc .npmrc
 
 RUN npm install --production --no-optional
 RUN rm -f .npmrc
