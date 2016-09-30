@@ -14,7 +14,7 @@ build_staging:
   - docker:dind
   script:
     - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.gitlab.com
-    - docker build --build-arg NPM_TOKEN=6f3bcf35-125d-40da-bfab-dcfb6efece79 -t registry.gitlab.com/reallybigtree/pinecone-server .
-    - docker push registry.gitlab.com/reallybigtree/pinecone-server
+    - docker build --build-arg NPM_TOKEN=6f3bcf35-125d-40da-bfab-dcfb6efece79 -t registry.gitlab.com/reallybigtree/pinecone-destination-twitter .
+    - docker push registry.gitlab.com/reallybigtree/pinecone-destination-twitter
   only:
     - master
